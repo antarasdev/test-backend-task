@@ -37,7 +37,9 @@
 ### Инструкция по развертыванию приложения в Docker:
 1. Склонировать репозиторий:
   
-`git clone git@github.com:babyshitt/test-backend-task.git`
+   `git clone git@github.com:babyshitt/test-backend-task.git`
+  
+
 2. Создайте файл `.env` в корне проекта с данными:
    ```
    DB_HOST='database'
@@ -46,13 +48,22 @@
    DB_PASSWORD='password'
    TOKEN='9876543210'
    ```
-   
-3. Для развертывания приложения перейдите в директорию infra:
+3. Создайте виртуальное окружение:
 
-`cd infra`
+   `python3 -m venv venv`
   
 
-   И выполните команду:
+4. Установите зависимости из директории `/app`:
 
+   `pip install -r requirements.txt`
+  
+
+5. Для развертывания приложения перейдите в директорию infra:
+
+   `cd infra`
+  
+
+6. Выполните команду:
+   
    `sudo docker-compose up -d --build`
 
