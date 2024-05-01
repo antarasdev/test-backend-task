@@ -1,10 +1,10 @@
 ## Тестовое задание для Python Back-end разработчика
 
 ### Стек:
-[![Docker](https://img.shields.io/badge/Docker-blue?logo=docker)](https://www.docker.com/)
-[![docker-compose](https://img.shields.io/badge/docker--compose-blue?logo=docker)](https://docs.docker.com/compose/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-blue?logo=fastapi)](https://fastapi.tiangolo.com/)
-[![Clickhouse](https://img.shields.io/badge/Clickhouse-blue?logo=clickhouse)](https://clickhouse.tech/)
+[![Docker](https://img.shields.io/badge/Docker-gray?logo=docker)](https://www.docker.com/)
+[![docker-compose](https://img.shields.io/badge/docker--compose-gray?logo=docker)](https://docs.docker.com/compose/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-gray?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Clickhouse](https://img.shields.io/badge/Clickhouse-gray?logo=clickhouse)](https://clickhouse.tech/)
 
 ### Основное задание:
 Представлены данные в формате csv. Данные содержат информацию о динамике торговли двух стран.
