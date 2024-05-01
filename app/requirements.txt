@@ -5,6 +5,7 @@ clickhouse-driver==0.2.7
 fastapi==0.110.3
 h11==0.14.0
 idna==3.7
+isort==5.13.2
 numpy==1.26.4
 pandas==2.2.2
 pydantic==2.7.1
