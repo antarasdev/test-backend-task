@@ -36,5 +36,5 @@
   
 
    И выполните команду:  
-   `docker-compose up -d --build`
+   `sudo docker-compose up -d --build`
 
