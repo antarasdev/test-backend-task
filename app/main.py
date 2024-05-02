@@ -1,5 +1,5 @@
 import os
-
+from math import ceil
 from clickhouse_driver import Client
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, Header, HTTPException, Query
@@ -27,15 +27,25 @@ async def check_token(token: str = Header(...)):
 
 @app.get('/')
 async def products_with_column_names(
-        page: int = 1,
-        page_size: int = 100,
+        page: int = Query(1, gt=0),
+        page_size: int = Query(100, gt=0),
 ):
     offset = (page - 1) * page_size
+    query = f"SELECT COUNT(*) FROM product.tables"
+    total_count = client.execute(query)[0][0]
+
     query = f"SELECT * FROM product.tables LIMIT {offset}, {page_size}"
     result = client.execute(query)
     columns = [col[0] for col in client.execute("DESCRIBE product.tables")]
     data_with_columns = [{columns[i]: row[i] for i in range(len(columns))} for row in result]
-    return data_with_columns
+
+    total_pages = ceil(total_count / page_size)
+    return {
+        "total_count": total_count,
+        "total_pages": total_pages,
+        "current_page": page,
+        "data": data_with_columns
+    }
 
 
 @app.post('/api')
