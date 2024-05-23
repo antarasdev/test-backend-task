@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS product.tables (
     netweight UInt32,
     trade_value UInt32
 ) ENGINE = MergeTree()
-ORDER BY (period_desc);
+ORDER BY classification;
 
 INSERT INTO product.tables (
     classification,

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  database:
+    image: clickhouse/clickhouse-server:latest
+    container_name: database
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - ../products/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ../products/Data.csv:/data/Data.csv
+      - clickhouse-data:/var/lib/clickhouse
+volumes:
+  clickhouse-data:
